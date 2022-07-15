@@ -1,0 +1,371 @@
+use db_alumno
+db.createCollection("alumnos")
+
+
+--------------------------------------------------
+insert
+--------------------------------------------------
+db.alumnos.insertMany([
+{
+_id:1,
+rut: "20102433-3",
+nombre:"Pablo Merinda",
+fechadenac:"2007-01-09",
+curso:[1],
+jornada:"Mañana"
+},
+{
+_id:2,
+rut: "20223687-3",
+nombre:"Maria Rojas",
+fechadenac:"2007-03-02",
+sexo:"Femenino",
+curso:[1],
+jornada:"Mañana"
+},
+{
+_id:3,
+rut: "2022112-3",
+nombre:"Muriel Mendez",
+fechadenac:"2007-01-24",
+sexo:"Femenino",
+curso:[1],
+jornada:"Mañana"
+},
+{
+_id:4,
+rut: "20334567-3",
+nombre:"Esteban Riveros",
+fechadenac:"2007-05-22",
+sexo:"Masculino",
+curso:[1],
+jornada:"Mañana"
+},
+{
+_id:5,
+rut: "20554322-3",
+nombre:"Maria Toledo",
+fechadenac:"2006-05-22",
+sexo:"Femenino",
+curso:[2],
+jornada:"Mañana"
+},
+{
+_id:6,
+rut: "20665468-2",
+nombre:"Ramon Paredes",
+fechadenac:"2006-02-19",
+sexo:"Masculino",
+curso:[2],
+jornada:"Mañana"
+},
+{
+_id:7,
+rut: "20221446-1",
+nombre:"Mariela Mardones",
+fechadenac:"2006-03-19",
+sexo:"Femenino",
+curso:[2],
+jornada:"Mañana"
+},
+{
+_id:8,
+rut: "20334567-1",
+nombre:"Matias Escalante",
+fechadenac:"2005-05-13",
+sexo:"Masculino",
+curso:[3],
+jornada:"Mañana-Tarde"
+},
+{
+_id:9,
+rut: "20334567-0",
+nombre:"Luciano Gallardo",
+fechadenac:"2005-02-11",
+sexo:"Masculino",
+curso:[3],
+jornada:"Mañana-Tarde"
+},
+{
+_id:10,
+rut: "20331349-4",
+nombre:"Muriel Moreno",
+fechadenac:"2005-06-13",
+sexo:"Femenino",
+curso:[3],
+jornada:"Mañana-Tarde"
+},
+{
+_id:11,
+rut: "20778980-6",
+nombre:"Damian Muñoz",
+fechadenac:"2005-05-29",
+sexo:"Masculino",
+curso:[4],
+jornada:"Mañana-Tarde"
+},
+{
+_id:12,
+rut: "20122323-4",
+nombre:"Sofia Gallegillos",
+fechadenac:"2004-01-05",
+sexo:"Femenino",
+curso:[4],
+jornada:"Mañana-Tarde"
+},
+{
+_id:13,
+rut: "20565765-3",
+nombre:"Camila Rojas",
+fechadenac:"2004-08-24",
+sexo:"Femenino",
+curso:[4],
+jornada:"Mañana-Tarde"
+},
+{
+_id:14,
+rut: "20335912-0",
+nombre:"Jeremias Madariaga",
+fechadenac:"2004-12-24",
+sexo:"Masculino",
+curso:[4],
+jornada:"Mañana-Tarde"
+}
+])
+
+
+-----------------------------------
+-----------------------------------
+
+db.createCollection("asignaturas")
+----------------------------------
+insert
+----------------------------------
+db.asignaturas.insertMany([{
+_id:1,
+nombre:"Matematicas",
+docentes:[3]
+},
+{
+_id:2,
+nombre:"Lenguaje",
+docentes:[6]
+},
+{
+_id:3,
+nombre:"Biologia",
+docentes:[4]
+},
+{
+_id:4,
+nombre:"Quimica",
+docentes:[5]
+},
+{
+_id:5,
+nombre:"Fisica",
+docentes:[2]
+},
+{
+_id:6,
+nombre:"Historia",
+docentes:[1]
+},
+])
+-----------------------------------
+-----------------------------------
+
+db.createCollection("docentes")
+----------------------------------
+insert
+----------------------------------
+db.docentes.insertMany([{
+_id:1,
+rut: "19234452-0",
+nombre:"Lorena Molina",
+especialidad:"Historia"
+},
+{
+_id:2,
+rut: "19198332-2",
+nombre:"Pablo Muñoz",
+especialidad:"Fisica"
+},
+{
+_id:3,
+rut: "18349821-1",
+nombre:"Catalina Medel",
+especialidad:"Matematica"
+},
+{
+_id:4,
+rut: "18665453-4",
+nombre:"Carlos Magaro",
+especialidad:"Biologia"
+},
+{
+_id:5,
+rut: "19112092-0",
+nombre:"Mauricio Escamilla",
+especialidad:"Quimica"
+},
+{
+_id:6,
+rut: "18089302-8",
+nombre:"Clara Paredes",
+especialidad:"Lenguaje"
+}
+])
+-----------------------------------
+-----------------------------------
+db.createCollection("curso")
+-----------------------------------
+insert
+-----------------------------------
+db.curso.insertMany([{
+_id:1,
+nombre:"Primero Medio"
+},
+{
+_id:2,
+nombre:"Segundo Medio"
+},
+{
+_id:3,
+nombre:"Tercero Medio"
+},
+{
+_id:4,
+nombre:"Cuarto Medio"
+}
+])
+-----------------------------------
+-----------------------------------
+db.createCollection("prueba1")
+-----------------------------------
+insert
+-----------------------------------
+db.prueba1.insertMany([{
+_id:1,
+alumnos:[1],
+asignaturas:[1],
+curso:[1],
+nota:6.5,
+nro_examen:1
+},
+{
+_id:2,
+alumnos:[2],
+asignaturas:[2],
+curso:[1],
+nota:6.0,
+nro_examen:1
+},
+{
+_id:3,
+alumnos:[3],
+asignaturas:[3],
+curso:[1],
+nota:6.5,
+nro_examen:1
+},
+{
+_id:4,
+alumnos:[4],
+asignaturas:[4],
+curso:[1],
+nota:4.5,
+nro_examen:1
+},
+{
+_id:5,
+alumnos:[5],
+asignaturas:[5],
+curso:[2],
+nota:6.5,
+nro_examen:1
+},
+{
+_id:6,
+alumnos:[6],
+asignaturas:[6],
+curso:[2],
+nota:6.5,
+nro_examen:1
+},
+{
+_id:7,
+alumnos:[7],
+asignaturas:[1],
+curso:[2],
+nota:6.5,
+nro_examen:1
+},
+{
+_id:8,
+alumnos:[8],
+asignaturas:[2],
+curso:[3],
+nota:6.5,
+nro_examen:1
+},
+{
+_id:9,
+alumnos:[9],
+asignaturas:[3],
+curso:[3],
+nota:6.5,
+nro_examen:1
+},
+{
+_id:10,
+alumnos:[10],
+asignaturas:[4],
+curso:[3],
+nota:6.5,
+nro_examen:1
+},
+{
+_id:11,
+alumnos:[11],
+asignaturas:[5],
+curso:[4],
+nota:6.5,
+nro_examen:1
+},
+{
+_id:12,
+alumnos:[12],
+asignaturas:[6],
+curso:[4],
+nota:6.5,
+nro_examen:1
+},
+{
+_id:13,
+alumnos:[13],
+asignaturas:[1],
+curso:[4],
+nota:6.5,
+nro_examen:1
+},
+{
+_id:14,
+alumnos:[14],
+asignaturas:[2],
+curso:[4],
+nota:6.5,
+nro_examen:1
+}
+])
+
+por eso digo es mejor educar a los niños
+así no teneis que castigar a los hombres
+
+
+
+
+
+
+
+
